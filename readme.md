@@ -86,4 +86,5 @@ This project uses ESLint and Prettier for code linting and formatting. Configura
 
 ### Run ESLint
 
+
 npm run lint
