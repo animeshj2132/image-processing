@@ -33,6 +33,7 @@ Webhooks
 
 Role: Notifies external systems about the status of processing requests.
 Function: Sends status updates to a predefined URL whenever the status of a processing request changes.
+
 5. Detailed Component Interactions
 File Upload & Validation
 
@@ -50,6 +51,7 @@ Completion and Notification
 
 Once all images are processed, the status of the request is updated to 'completed'.
 A final webhook notification is sent with the results.
+
 6. Database Schema
 ProcessingRequest
 requestId: Unique identifier for the request.
@@ -57,6 +59,7 @@ status: Current status of the request (received, processing, completed, error).
 processedData: Array of processed data including original and compressed image URLs.
 errorMessage: Error message if processing fails.
 timestamps: Timestamps for request creation and updates.
+
 7. API Endpoints
 POST /upload
 
@@ -68,17 +71,21 @@ GET /status/{requestId}
 Description: Retrieves the status of a processing request.
 Request: Path parameter with requestId.
 Response: JSON with status, processedData, and errorMessage.
+
 8. Error Handling
 File Upload Errors: Handles cases where no file is uploaded, or the file format is invalid.
 CSV Validation Errors: Handles cases where CSV headers do not match the expected format or required fields are missing.
 Image Processing Errors: Captures and logs errors during image download and compression, updating the request status to 'error'.
+
 9. Security Considerations
 Authentication: Ensure endpoints are secured using appropriate authentication mechanisms.
 Validation: Properly validate and sanitize all inputs to prevent injection attacks.
 Data Protection: Ensure sensitive data is encrypted and access to the database is controlled.
+
 10. Deployment Considerations
 Scalability: Design the system to handle increased loads by scaling horizontally.
 Monitoring: Implement monitoring to track the performance and health of the system.
 Backup: Ensure regular backups of the database to prevent data loss.
+
 11. Conclusion
 This LLD provides a detailed overview of the image processing system, describing the roles and functions of each component and their interactions. The design ensures efficient handling of file uploads, image processing, and status tracking, while maintaining robust error handling and security measures.
