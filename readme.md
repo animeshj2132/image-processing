@@ -31,12 +31,12 @@ This project provides an API for uploading a CSV file containing image URLs and 
 ### Installation
 
 1. Clone the repository:
-    ```sh
-    git clone <repository-url>
+    ```
+    git clone https://github.com/animeshj2132/image-processing.git
     ```
 
 2. Install dependencies:
-    ```sh
+    ```
     npm install
     ```
 
@@ -86,5 +86,4 @@ This project uses ESLint and Prettier for code linting and formatting. Configura
 
 ### Run ESLint
 
-```sh
 npm run lint
